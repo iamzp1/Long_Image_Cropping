@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长图分割工具</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="languageToggle">English</button>
+        <h1 id="title">长图分割工具</h1>
+        <div id="dropZone">
+            <span id="dropText">拖放图片文件到此处,或点击选择文件</span>
+            <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+        </div>
+        <div id="fileList"></div>
+        <div id="settings">
+            <label for="interval" id="intervalLabel">分割间隔 (像素):</label>
+            <input type="number" id="interval" min="100" value="3500">
+            <button id="splitButton">开始分割</button>
+            <button id="downloadAllButton" style="display: none;">下载 ZIP</button>
+        </div>
+        <div id="resultsAndLogs">
+            <div id="results"></div>
+            <div id="logContainer"></div>
+        </div>
+    </div>
+    <div id="statusMessage"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
